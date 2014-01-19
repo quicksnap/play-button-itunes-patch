@@ -89,7 +89,7 @@ if [[ $backup_count -ne 0 ]]; then
 	# Restore from the backup, use the first backup file.
 	echo
 	backup_file=`find $rcd_path -type f -maxdepth 1 -name rcd_backup_\* | head -1`
-	killall rcd 2> /dev/null            # Kill any existing processes
+	killall -KILL rcd 2> /dev/null            # Kill any existing processes
 	mv -f $backup_file $rcd_path/rcd    # Restore the backup file.
 	echo "Restore complete.  Your original functionality should be back.  To verify:"
 	echo " 1. If iTunes is already running then quit it first."
